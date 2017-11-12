@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_title: MyString
+  task_description: MyText
+  project: one
+  user: one
+  approved_by_admin: false
+  approved_by_pto: false
+
+two:
+  task_title: MyString
+  task_description: MyText
+  project: two
+  user: two
+  approved_by_admin: false
+  approved_by_pto: false

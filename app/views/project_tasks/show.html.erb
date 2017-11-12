@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task title:</strong>
+  <%= @project_task.task_title %>
+</p>
+
+<p>
+  <strong>Task description:</strong>
+  <%= @project_task.task_description %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @project_task.project %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project_task.user %>
+</p>
+
+<p>
+  <strong>Approved by admin:</strong>
+  <%= @project_task.approved_by_admin %>
+</p>
+
+<p>
+  <strong>Approved by pto:</strong>
+  <%= @project_task.approved_by_pto %>
+</p>
+
+<%= link_to 'Edit', edit_project_task_path(@project_task) %> |
+<%= link_to 'Back', project_tasks_path %>

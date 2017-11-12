@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_title: MyString
+  project_description: MyText
+  project_status: 1
+  pictures: MyString
+  approved_by_admin: false
+  approved_by_pto: false
+
+two:
+  project_title: MyString
+  project_description: MyText
+  project_status: 1
+  pictures: MyString
+  approved_by_admin: false
+  approved_by_pto: false
