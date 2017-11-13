@@ -1,6 +1,20 @@
-<%= link_to "About", about_path %>
-<%= link_to "Contact Us", contact_path %>
-<%= link_to "Log In", login_path%>
-<%= link_to "Sign Up", signup_path %>
+<% if !user_signed_in? %>
+	<%= link_to "About", about_path %>
+	<%= link_to "Contact Us", contact_path %>
+	<%= link_to "Sign Up", new_user_registration_path %>
+	<%= link_to "Log In", new_user_session_path%><br>
+<% else user_signed_in? %>
+
+	<%= link_to "Log Out", destroy_user_session_path, method: :delete%><br>
+	<%= link_to "Vote Now", new_vote_path %><br>
+	<% if current_user.pto_role? %>
+		<%= link_to "Causes and Projects", projects_path %>
+	<% end %>
+<% end %> 
 
 <h1>Ripply</h1>
+
+<div class="main-container">
+	<div class="first"> something appears here</div>
+	<div class="second">something appears here</div>
+</div>

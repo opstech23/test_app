@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+h1{
+	align: center;
+	border-color: #000000;
+}
+
+.main-container {
+	width: 100%;
+	background-color: #FFFFFF;
+	height: 40em;
+	color: white;
+	display: inline-block;
+}
+
+.first {
+	float: left;
+	border-color: white;
+	left: 50em;
+}
+
+.second {
+	float: right;
+	border-color: white;
+	width: 50em;
+}

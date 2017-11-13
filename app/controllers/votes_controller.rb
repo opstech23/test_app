@@ -15,6 +15,8 @@ class VotesController < ApplicationController
   # GET /votes/new
   def new
     @vote = Vote.new
+    byebug
+    @projects = Project.all.find(params[:projects])
   end
 
   # GET /votes/1/edit
@@ -69,6 +71,6 @@ class VotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vote_params
-      params.require(:vote).permit(:donation_amount, :project_id, :user_id)
+      params.require(:vote).permit(:donation_amount, :project_id)
     end
 end
