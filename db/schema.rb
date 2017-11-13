@@ -12,17 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20171113050806) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "project_tasks", force: :cascade do |t|
     t.string "task_title"
     t.text "task_description"
-    t.integer "project_id"
-    t.integer "user_id"
+    t.bigint "projects_id"
+    t.bigint "users_id"
     t.boolean "approved_by_admin"
     t.boolean "approved_by_pto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_project_tasks_on_project_id"
-    t.index ["user_id"], name: "index_project_tasks_on_user_id"
+    t.index ["projects_id"], name: "index_project_tasks_on_projects_id"
+    t.index ["users_id"], name: "index_project_tasks_on_users_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -32,7 +35,8 @@ ActiveRecord::Schema.define(version: 20171113050806) do
     t.string "pictures"
     t.boolean "approved_by_admin"
     t.boolean "approved_by_pto"
-    t.integer "users_id"
+    t.bigint "users_id"
+    t.bigint "donation_goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["users_id"], name: "index_projects_on_users_id"
@@ -50,12 +54,17 @@ ActiveRecord::Schema.define(version: 20171113050806) do
 
   create_table "votes", force: :cascade do |t|
     t.decimal "donation_amount"
-    t.integer "project_id"
-    t.integer "user_id"
+    t.bigint "project_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_votes_on_project_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "project_tasks", "projects", column: "projects_id"
+  add_foreign_key "project_tasks", "users", column: "users_id"
+  add_foreign_key "projects", "users", column: "users_id"
+  add_foreign_key "votes", "projects"
+  add_foreign_key "votes", "users"
 end

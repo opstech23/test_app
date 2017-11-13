@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#home' 
   get 'about', to: 'welcome#about'
-  get 'welcome/login', to: 'welcome#login'
-  get 'welcome/signup', to: 'welcome#signup'
-  get 'welcome/contact', to: 'welcome#contact'
+  get 'login', to: 'welcome#login'
+  get 'signup', to: 'welcome#signup'
+  get 'contact', to: 'welcome#contact'
+  post 'login', to: 'welcome#login'
+  post 'signup', to: 'welcome#signup'
 end
