@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Donation amount:</strong>
+  <%= @vote.donation_amount %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @vote.project %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vote.user %>
+</p>
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>

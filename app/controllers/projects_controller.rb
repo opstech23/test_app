@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   # POST /projects.json
+  # render plain: params[:article].inspect
   def create
     @project = Project.new(project_params)
 
